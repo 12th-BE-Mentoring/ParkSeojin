@@ -1,8 +1,14 @@
 package com.example.parkseojin;
 
+
 import jakarta.persistence.*;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 
 @Entity
+@RequiredArgsConstructor
+@NoArgsConstructor
 public class Student {
 
     @Id
@@ -10,19 +16,13 @@ public class Student {
     private Long id;
 
     @Column
+    @NonNull
     private String name;
 
     @Column
+    @NonNull
     private Integer age;
 
-    public Student() {
-
-    }
-
-    public Student(String name, Integer age) {
-        this.name = name;
-        this.age = age;
-    }
     public void increaseAge() {
         this.age++;
     }
